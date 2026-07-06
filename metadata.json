@@ -1,0 +1,6 @@
+{
+  "name": "Amharic AI News Studio",
+  "description": "YouTube video analyzer generating Amharic translations, summaries, articles, social posts, and metadata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

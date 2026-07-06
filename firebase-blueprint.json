@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "Analysis": {
+      "title": "Analysis",
+      "description": "YouTube video news analysis translation to Amharic results",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The Firebase Auth UID of the user who requested the analysis"
+        },
+        "url": {
+          "type": "string",
+          "description": "The original YouTube URL"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the video"
+        },
+        "author": {
+          "type": "string",
+          "description": "The author or channel of the video"
+        },
+        "thumbnail": {
+          "type": "string",
+          "description": "The thumbnail image URL of the video"
+        },
+        "videoId": {
+          "type": "string",
+          "description": "The extracted 11-character YouTube video ID"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of when the analysis was created"
+        },
+        "results": {
+          "type": "object",
+          "description": "The raw JSON analysis results from Gemini"
+        },
+        "isMock": {
+          "type": "boolean",
+          "description": "Whether the analysis is a mock demo"
+        }
+      },
+      "required": ["userId", "url", "title", "createdAt", "results"]
+    }
+  },
+  "firestore": {
+    "analyses/{analysisId}": {
+      "schema": "Analysis",
+      "description": "Stored user analysis history"
+    }
+  }
+}
